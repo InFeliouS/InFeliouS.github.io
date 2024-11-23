@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LandingPage</title>
+  <title>Contact Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="landing-page">
+  <div class="page-wrapper">
     <header class="header">
       <div class="logo">LogoInHere</div>
       <nav>
         <ul class="menu">
           <li><a href="inbox.html">Inbox</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a class = "linkselect" href="contact.html" class="active-link">Contact</a></li>
         </ul>
       </nav>
+      <a href="index.html" class="post-message-btn">Post Message</a>
     </header>
 
-    <main class="main-content">
-      <div class="post-container">
-        <div class="post-header">Create a secret post</div>
-        <form class="post-form">
-          <label for="post-name">Post Name:</label>
-          <input type="text" id="post-name" placeholder="To whom is this post?">
-          <label for="post-content">Post Content:</label>
-          <textarea id="post-content" placeholder="Type here the message you want to say..." maxlength="100"></textarea>
-          <div class="char-counter">0/100</div>
-          <button type="submit" class="post-button">Post</button>
-        </form>
-      </div>
+    <main class="contact-content">
+      <section class="contact-form-section">
+        <h1 class="contact-title">Get in touch</h1>
+        <p class="contact-subtitle">Be free. Let your heart speak</p>
+        <p class="contact-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <div class="email-box">
+          <div class="email-icon">&#9993;</div>
+          <p class="email-address">ronielramos@gmail.com</p>
+        </div>
+        <a href="mailto:ronielramos@gmail.com" class="message-btn">Message us</a>
+      </section>
     </main>
 
     <footer class="footer">
