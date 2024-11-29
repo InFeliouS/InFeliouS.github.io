@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LandingPage</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Freedom Wall</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/post_modal.css">
 </head>
 <body>
   <div class="landing-page">
@@ -21,39 +22,42 @@
 
     <main class="main-content">
       <div class="post-container">
-        <div class="post-header">Create a secret post</div>
+        <h1 class="post-header">Create a Secret Post</h1>
+        <!-- Removed action and method to allow AJAX to handle submission -->
         <form class="post-form">
           <label for="post-name">Post Name:</label>
-          <input type="text" id="post-name" placeholder="To whom is this post?">
+          <input 
+            type="text" 
+            id="post-name" 
+            name="post_name" 
+            placeholder="To whom is this post?" 
+            maxlength="25" 
+            required>
           <label for="post-content">Post Content:</label>
-          <textarea id="post-content" placeholder="Type here the message you want to say..." maxlength="100"></textarea>
-          <div class="char-counter">0/100</div>
+          <textarea 
+            id="post-content" 
+            name="post_content" 
+            placeholder="Type here the message you want to say..." 
+            maxlength="100" 
+            required></textarea>
           <button type="submit" class="post-button">Post</button>
         </form>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="footer-section description">
-        <h3>Description</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="footer-section socials">
-        <h3>Socials</h3>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Telegram</a></li>
-        </ul>
-      </div>
-      <div class="footer-section help">
-        <h3>Get Help</h3>
-        <ul>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </div>
+      <div>© 2024 Freedom Wall. All rights reserved.</div>
     </footer>
   </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <p id="modal-message"></p>
+      <button onclick="closeModal()">OK</button>
+    </div>
+  </div>
+
+  <script src="js/post_modal.js"></script>
 </body>
 </html>
