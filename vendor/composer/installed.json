@@ -1,0 +1,53 @@
+{
+    "packages": [
+        {
+            "name": "vasart/naughty-words",
+            "version": "1.2.3",
+            "version_normalized": "1.2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vasartam/php-naughty-words.git",
+                "reference": "e54792e0b1c43de1ec0bf0784c38639cf1a80a2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vasartam/php-naughty-words/zipball/e54792e0b1c43de1ec0bf0784c38639cf1a80a2e",
+                "reference": "e54792e0b1c43de1ec0bf0784c38639cf1a80a2e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "time": "2022-07-24T13:46:51+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "VasArt\\NaughtyWords\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "List of naughty words",
+            "homepage": "https://github.com/vasartam/php-naughty-words",
+            "keywords": [
+                "bad",
+                "naughty",
+                "obscene",
+                "words"
+            ],
+            "support": {
+                "source": "https://github.com/vasartam/php-naughty-words/tree/1.2.3"
+            },
+            "install-path": "../vasart/naughty-words"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
