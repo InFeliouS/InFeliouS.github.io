@@ -24,8 +24,8 @@ body {
 .header .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  position: absolute;
-  left: 150px;
+  margin-left: 150px;
+  color: #98bdfc;
 }
 
 .header nav {
@@ -69,7 +69,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #bfd7f5;
-  padding: 20px;
+  
 }
 
 .post-container {
@@ -79,6 +79,7 @@ body {
   padding: 20px;
   max-width: 400px; 
   width: 100%;
+  margin-top: 0px;
 }
 
 .post-header {
@@ -143,6 +144,10 @@ body {
   gap: 20px;
 }
 
+.footer-section{
+  max-width: 800px;
+}
+
 .footer-section h3 {
   margin-top: 0;
 }
@@ -157,6 +162,14 @@ body {
   text-decoration: none;
 }
 
+.footer-section ul li a:hover{
+  color: #4d8eff;
+}
+
+.footer-section p {
+  flex-wrap: wrap;
+}
+
 .contact-content {
   background-color: #bfd7f5;
   flex: 1;
@@ -165,7 +178,7 @@ body {
   align-items: center;
   padding: 20px;
   text-align: center;
-  height: 755px;
+  height: 736px;
 }
 
 .contact-form-section {
@@ -234,9 +247,8 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: bold;
-  position: absolute;
-  top: 25px;
-  right: 80px;
+  position:relative;
+  margin-right: 80px;
 }
 
 .post-message-btn:hover {
@@ -280,7 +292,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
   max-width: 1200px;
   margin: auto;
 }
@@ -306,19 +318,10 @@ body {
   margin-bottom: 15px;
 }
 
-.about-image {
-  flex: 1;
-}
-
-.about-image img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 
 .inbox-main-content{
-  height: 795px;
+  height: 775px;
   background-color: #bfd7f5;
 }
 
@@ -453,3 +456,175 @@ body {
   margin-bottom: 8px; /* Adds space between list items */
 }
 
+
+
+@media (max-width: 414px) {
+  .header .logo {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: -50px;
+  }
+
+  .header nav ul.menu {
+    font-size: 15px;
+    gap: 20px;
+  }
+
+  .post-container {
+    background-color: #fdf5dc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px; 
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .post-message-btn {
+    background-color: #ffc107;
+    color: black;
+    width: 60px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    justify-content: center;
+    font-weight: bold;
+    position:relative;
+    margin-right: -60px;
+  }
+
+  .header nav ul.menu li a.linkselect{
+    font-size: 18px;
+  }
+  .about-section {
+    flex-wrap:wrap-reverse;
+  }
+
+  .about-image img{
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  .about-text h1 {
+    font-size: 0px;
+    margin: 0px;
+
+  }
+  
+  .about-text .tagline {
+    font-size: 15px;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .about-text p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .about-text .tagline{
+    margin: 0px;
+  }
+
+  .about-text{
+    max-width: 350px;
+    padding-left: 15px;
+  }
+
+  .about-section{
+    gap: 20px;
+  }
+
+  .about-content {
+    height: 650px;
+  }
+
+  .contact-content {
+    height: 650px;
+  }
+
+  .footer{
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 40px;
+  }
+
+  .footer-section h3{
+    font-size: 15px;
+  }
+
+  .footer-section p{
+    font-size: 12px;
+    padding: 0px;
+  }
+  
+  .footer-section ul li a {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .footer-section help{
+    margin-left: -50px;
+  }
+
+  .contact-title{
+    font-size: 26px;
+  }
+
+  .contact-description{
+    font-size: 13px;
+  }
+
+  .contact-content{
+    height: 600px;
+  }
+
+  .contact-details{
+    font-size: 16px;
+  }
+
+  .contact-form-section p{
+    font-size: 14px;
+  }
+
+  .inbox-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .inbox-post-header h2{
+    font-size: 20px;
+    margin: 8px 0px;
+  }
+
+  .inbox-post-header span{
+    font-size: 14px;
+  }
+
+  .inbox-post-body p{
+    font-size: 14px;
+    margin: 10px 0px;
+  }
+  .inbox-post-body{
+    padding: 10px;
+  }
+
+  .inbox-comments p{
+    font-size: 14px;
+    margin: 10px 0px;
+  }
+  
+  .inbox-comments{
+    padding: 15px;
+  }
+
+  .inbox-main-content{
+    height: 700px;
+  }
+}

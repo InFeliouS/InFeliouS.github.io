@@ -7,63 +7,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fetch a post (random or by ID)
     function fetchPost(action, postId = null) {
-        const url = action === "search" ? `php/get_post.php?action=${action}&post_id=${postId}` : `php/get_post.php?action=random`;
+        const url = action === "search" ? `php/get_post.php?action=search&post_id=${encodeURIComponent(postId)}` : `php/get_post.php?action=random`;
 
         fetch(url)
-            .then((response) => {
-                if (!response.ok) throw new Error("Network response was not ok");
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to fetch post.");
                 return response.json();
             })
-            .then((data) => {
+            .then(data => {
                 if (data.error) {
-                    alert(data.error);
+                    displayError("Post not found or invalid request.");
                     return;
                 }
 
-                // Update the post display
-                inboxPostHeader.textContent = `#${data.post_id} - ${data.post_name} (${new Date(data.post_datetime).toLocaleString()})`;
-                inboxPostHeader.dataset.postId = data.post_id; // Update postId for reference
-                inboxPostBody.textContent = data.post_content;
+                // Update post content
+                inboxPostHeader.textContent = `#${data.post_id} - ${sanitizeHtml(data.post_name)} (${new Date(data.post_datetime).toLocaleString()})`;
+                inboxPostHeader.dataset.postId = data.post_id;
+                inboxPostBody.textContent = sanitizeHtml(data.post_content);
 
-                // Fetch and display comments
+                // Fetch comments
                 fetchComments(data.post_id);
             })
-            .catch((error) => console.error("Error fetching post:", error));
+            .catch(() => displayError("Error loading post. Please try again later."));
     }
 
     // Fetch comments for a post
     function fetchComments(postId) {
-        console.log("Fetching comments for post ID:", postId);
+        inboxComments.innerHTML = "<p>Loading comments...</p>";
 
         fetch(`php/get_comment.php?post_id=${postId}`)
-            .then((response) => {
-                if (!response.ok) throw new Error("Failed to fetch comments");
+            .then(response => {
+                if (!response.ok) throw new Error("Failed to fetch comments.");
                 return response.json();
             })
-            .then((data) => {
-                // Check the fetched comments data
-                console.log("Fetched comments:", data);
-                const comments = data.comments;
-                inboxComments.innerHTML = "";  // Clear loading text
+            .then(data => {
+                inboxComments.innerHTML = "";
 
-                // Insert comments into the DOM
-                if (comments.length > 0) {
-                    comments.forEach((comment) => {
-                        inboxComments.insertAdjacentHTML(
-                            "beforeend",
-                            `
-                            <div class="inbox-comment">
-                                <p>${comment.comment_content}</p>
-                                <span class="inbox-comment-time">${new Date(comment.comment_date).toLocaleString()}</span>
-                            </div>
-                            `
-                        );
+                if (data.comments && data.comments.length > 0) {
+                    data.comments.forEach(comment => {
+                        const commentElement = document.createElement("div");
+                        commentElement.classList.add("inbox-comment");
+                        commentElement.innerHTML = `
+                            <p>${sanitizeHtml(comment.comment_content)}</p>
+                            <span class="inbox-comment-time">${new Date(comment.comment_date).toLocaleString()}</span>
+                        `;
+                        inboxComments.appendChild(commentElement);
                     });
                 } else {
                     inboxComments.innerHTML = "<p>No comments yet. Be the first to comment!</p>";
                 }
 
-                // Insert the comment form
+                // Add comment form
                 inboxComments.insertAdjacentHTML(
                     "beforeend",
                     `
@@ -76,25 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     `
                 );
-
-                // Attach event listener to handle new comments
                 attachCommentFormListener(postId);
             })
-            .catch((error) => {
-                console.error("Error fetching comments:", error);
-                inboxComments.innerHTML = "<p>Failed to load comments. Please try again later.</p>";
+            .catch(() => {
+                inboxComments.innerHTML = "<p>Error loading comments. Please try again later.</p>";
             });
     }
 
-    // Attach comment form listener
+    // Handle comment form submission
     function attachCommentFormListener(postId) {
         const commentForm = document.querySelector(".inbox-add-comment form");
-        if (!commentForm) {
-            console.error("Error: Comment form not found.");
-            return;
-        }
+        if (!commentForm) return;
 
-        // Prevent default form submission
         commentForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -104,31 +91,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 method: "POST",
                 body: formData,
             })
-                .then((response) => response.json())
-                .then((data) => {
+                .then(response => response.json())
+                .then(data => {
                     if (data.success) {
-                        alert("Comment added successfully!");
-                        fetchComments(postId); // Refresh comments
+                        fetchComments(postId); // Reload comments
                     } else {
-                        alert(data.message || "An error occurred while adding your comment.");
+                        alert(data.message || "Failed to add comment.");
                     }
                 })
-                .catch((error) => {
-                    console.error("Error submitting comment:", error);
-                    alert("Failed to submit your comment. Please try again.");
-                });
+                .catch(() => alert("Error adding comment. Please try again later."));
         });
     }
 
-    // Random Post Button
-    randomPostButton.addEventListener("click", () => fetchPost("random"));
+    // Display error message
+    function displayError(message) {
+        inboxPostHeader.textContent = message;
+        inboxPostBody.textContent = "";
+        inboxComments.innerHTML = "<p>No content available.</p>";
+    }
 
-    // Post Search Button
+    // Sanitize user input or server response
+    function sanitizeHtml(input) {
+        const div = document.createElement("div");
+        div.textContent = input;
+        return div.innerHTML;
+    }
+
+    // Event Listeners
+    randomPostButton.addEventListener("click", () => fetchPost("random"));
     postSearchButton.addEventListener("click", () => {
-        const postId = prompt("Enter the 6-digit Post ID:");
+        const postId = prompt("Enter the Post ID:");
         if (postId) fetchPost("search", postId);
     });
 
-    // Automatically fetch a random post on page load
+    // Fetch a random post on page load
     fetchPost("random");
 });
