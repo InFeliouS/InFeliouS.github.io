@@ -1,0 +1,35 @@
+.contact-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 0px;
+  
+}
+
+.contact-container {
+  display: flex;
+  border: 5px solid #6b5252;
+  justify-content:center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-container a {
+  color:#fff3f1;
+  text-decoration: none;
+}
+.contact-container a:hover{
+  text-decoration: underline;
+}
+

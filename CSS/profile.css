@@ -1,0 +1,37 @@
+/* Profile Styles */
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 230px;
+  height: 230px;
+  margin-right: 20px;
+  border: 5px solid #574343;
+}
+
+.profile-text {
+  margin-right: 20px;
+  text-align: justify;
+  text-indent: 45px;
+}
+
+.profile-name {
+  font-size: 30px;
+  font-family: "Sukar", cursive;
+  font-weight: bold;
+}
+
+.nickname {
+  color: #fc6868;
+}
+
+/* Skills Styles */
+.skills-lists {
+  display: flex;
+}
+
+.skills-lists ul {
+  flex: 1;
+}

@@ -1,0 +1,41 @@
+#date {
+  margin-bottom: -12px;
+}
+
+#blog_link {
+  font-size: larger;
+  font-weight: bold;
+}
+
+a {
+  color: #ff9d5c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.main_post {
+  margin: 30px 100px;
+}
+
+.main_post hr {
+  border: none;
+  border-top: 3px dashed #ccc;
+  height: 1px;
+  margin: 20px 0;
+}
+
+.main_post h1 {
+  color: #fc6868;
+}
+
+.main_post h2 {
+  color: #b6ec78;
+}
+
+.main_post p {
+  line-height: 28px;
+  text-indent: 3em;
+}

@@ -1,0 +1,233 @@
+/* Projects Styles */
+
+.projects h1 {
+  font-family: "League Spartan", sans-serif;
+}
+
+.projects img {
+  width: 275px;
+  height: 150px;
+  margin-right: 20px;
+  border: 5px solid #574343;
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-family: "Sukar", cursive;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.project-text {
+  font-size: 16px;
+}
+
+.project-content {
+  flex: 1;
+}
+
+.button-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff3f1;
+  background-color: #6762f2;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.button-link:hover {
+  background-color: #9793f6;
+}
+
+.projects hr {
+  border: none;
+  border-top: 2px dashed #fff3f1;
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* Medium devices (tablets, 801px - 974px) */
+@media (max-width: 801px) {
+  .projects img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #574343;
+    margin: auto;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-family: "Sukar", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .project-text {
+    font-size: 15px;
+  }
+
+  .project-content {
+    text-align: center;
+  }
+
+  .button-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff3f1;
+    background-color: #6762f2;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .button-link:hover {
+    background-color: #9793f6;
+  }
+
+  .projects hr {
+    border: none;
+    border-top: 2px dashed #fff3f1;
+    width: 75%;
+    margin: 20px auto;
+  }
+}
+
+/* Small devices (landscape phones, 601px - 800px) */
+@media (max-width: 600px) {
+  .projects img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #574343;
+    margin: auto;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-family: "Sukar", cursive;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .project-text {
+    font-size: 14px;
+  }
+
+  .button-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff3f1;
+    background-color: #6762f2;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .button-link:hover {
+    background-color: #9793f6;
+  }
+
+  .projects hr {
+    border: none;
+    border-top: 2px dashed #fff3f1;
+    width: 75%;
+    margin: 20px auto;
+  }
+}
+/* Small devices (landscape phones, 481px - 599px) */
+@media (max-width: 480px) {
+  .projects img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #574343;
+    margin: auto;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-family: "Sukar", cursive;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .project-text {
+    font-size: 13px;
+  }
+
+  .button-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff3f1;
+    background-color: #6762f2;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .button-link:hover {
+    background-color: #9793f6;
+  }
+
+  .projects hr {
+    border: none;
+    border-top: 2px dashed #fff3f1;
+    width: 75%;
+    margin: 20px auto;
+  }
+}
+/* Extra small devices (phones, 320px - 600px) */
+@media (max-width: 320px) {
+  .projects img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #574343;
+    margin: auto;
+  }
+
+  .project-title {
+    font-family: "Sukar", cursive;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .project-text {
+    font-size: 12px;
+  }
+
+  .button-link {
+    font-size: 14px;
+    padding: 6px 10px;
+    margin-top: 8px;
+  }
+}
