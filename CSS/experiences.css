@@ -237,8 +237,9 @@
    Internship – Minimal Fix
    ========================= */
 
-.internship {
-  max-width: 900px;
+.projects > .internship {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Emphasize Internship Company */
