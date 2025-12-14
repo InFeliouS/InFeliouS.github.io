@@ -107,8 +107,6 @@
   margin: 0 auto;
 }
 
-
-
 /* ==============================
    Responsive
    ============================== */
@@ -128,4 +126,41 @@
   .profile-name {
     font-size: 24px;
   }
+}
+
+/* ==============================
+   Resume Download Section
+   ============================== */
+
+.resume-download {
+  margin: 12px auto 24px;
+  max-width: 800px;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 10px;
+  padding: 10px 16px;
+
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  text-decoration: none;
+
+  color: #fff3f1;
+  border: 2px solid #b6ec78;
+  border-radius: 6px;
+
+  transition: all 0.2s ease;
+}
+
+.resume-link i {
+  color: #b6ec78;
+}
+
+.resume-link:hover {
+  background-color: rgba(182, 236, 120, 0.12);
+  transform: translateY(-1px);
 }
