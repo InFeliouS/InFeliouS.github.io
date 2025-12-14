@@ -204,6 +204,7 @@
     margin: 20px auto;
   }
 }
+
 /* Extra small devices (phones, 320px - 600px) */
 @media (max-width: 320px) {
   .projects img {
@@ -230,4 +231,47 @@
     padding: 6px 10px;
     margin-top: 8px;
   }
+}
+
+/* =========================
+   Internship – Minimal Fix
+   ========================= */
+
+.internship {
+  max-width: 900px;
+}
+
+/* Emphasize Internship Company */
+
+.internship-company {
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #ffd363;
+}
+
+/* Section labels (Role Overview, Key Tasks) */
+.internship-label {
+  margin-top: 24px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #b6ec78;
+}
+
+/* List spacing */
+.internship-list {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.internship-list li {
+  margin-bottom: 6px;
+}
+
+/* Confidentiality note */
+.internship-note {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #ccc;
 }
